@@ -42,7 +42,7 @@ export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
 
   const resetFilters = () => {
     onFiltersChange({
-      types: [],
+      types: ["Web"],
       ownerTypes: [],
       minReliability: 0,
       politicalOnly: true,
@@ -124,6 +124,7 @@ export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
                   id={`type-${type}`}
                   checked={filters.types.includes(type)}
                   onCheckedChange={() => toggleFilter("types", type)}
+                  className="cursor-pointer"
                 />
                 <label
                   htmlFor={`type-${type}`}
@@ -146,6 +147,7 @@ export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
                   id={`owner-${type}`}
                   checked={filters.ownerTypes.includes(type)}
                   onCheckedChange={() => toggleFilter("ownerTypes", type)}
+                  className="cursor-pointer"
                 />
                 <label
                   htmlFor={`owner-${type}`}

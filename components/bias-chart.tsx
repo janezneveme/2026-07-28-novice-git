@@ -49,7 +49,7 @@ function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
             {t.reliability}: <span className="font-medium text-foreground">{Math.round(data.reliability * 100)}%</span>
           </p>
           <p className="text-sm text-muted-foreground">
-            {t.owner}: <span className="font-medium text-foreground">{data.owner}</span>
+            <span className="font-medium text-foreground">{data.owner}</span>
           </p>
         </div>
         <p className="mt-2 text-xs text-muted-foreground italic">{t.clickForDetails}</p>
@@ -71,6 +71,30 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
   
   return (
     <div className="relative w-full">
+      {/* Reliability Legend */}
+      <div className="grid grid-cols-4 gap-2 mb-4 text-center">
+        <div className="space-y-1">
+          <div className="h-3 bg-red-500/60 rounded-sm" />
+          <p className="text-[10px] font-medium">0–34%</p>
+          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Zelo nizka" : "Very Low"}</p>
+        </div>
+        <div className="space-y-1">
+          <div className="h-3 bg-orange-500/60 rounded-sm" />
+          <p className="text-[10px] font-medium">35–54%</p>
+          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Nizka" : "Low"}</p>
+        </div>
+        <div className="space-y-1">
+          <div className="h-3 bg-amber-500/60 rounded-sm" />
+          <p className="text-[10px] font-medium">55–74%</p>
+          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Srednja" : "Medium"}</p>
+        </div>
+        <div className="space-y-1">
+          <div className="h-3 bg-emerald-500/60 rounded-sm" />
+          <p className="text-[10px] font-medium">75–100%</p>
+          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Visoka" : "High"}</p>
+        </div>
+      </div>
+
       {/* Chart container with proper aspect ratio */}
       <div className="h-[500px] w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -186,7 +210,11 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
                   key={entry.id}
                   fill={getPointColor(entry.bias)}
                   r={8}
-                  className="hover:opacity-80 transition-opacity"
+                  className="hover:opacity-100 transition-all duration-200"
+                  style={{
+                    filter: "drop-shadow(0 0 0px rgba(0,0,0,0))",
+                    opacity: 0.85
+                  }}
                 />
               ))}
             </Scatter>

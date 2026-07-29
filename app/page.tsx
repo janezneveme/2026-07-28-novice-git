@@ -23,7 +23,7 @@ function MediaAtlasContent() {
   const [selectedMedia, setSelectedMedia] = useState<MediaOutlet | null>(null)
   const [modalOpen, setModalOpen] = useState(false)
   const [filters, setFilters] = useState<FilterState>({
-    types: [],
+    types: ["Web"],
     ownerTypes: [],
     minReliability: 0,
     politicalOnly: true,
