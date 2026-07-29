@@ -74,41 +74,8 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
   
   return (
     <div className="relative w-full">
-      {/* Animation styles for dots */}
-      <style>{`
-        @keyframes dotEnter {
-          0% {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          100% {
-            opacity: 0.85;
-            transform: translateX(0);
-          }
-        }
-        
-        @keyframes dotExit {
-          0% {
-            opacity: 0.85;
-            transform: translateX(0);
-          }
-          100% {
-            opacity: 0;
-            transform: translateX(20px);
-          }
-        }
-        
-        circle[data-dot-animated] {
-          animation: dotEnter 0.4s ease-out forwards;
-        }
-        
-        circle[data-dot-exit] {
-          animation: dotExit 0.3s ease-in forwards;
-        }
-      `}</style>
-      
       {/* Chart container with proper aspect ratio */}
-      <div className="h-[500px] w-full">
+      <div className="h-[500px] w-full animate-in fade-in duration-300">
         <ResponsiveContainer width="100%" height="100%">
           <ScatterChart margin={{ top: 30, right: 30, bottom: 40, left: 50 }}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
@@ -224,8 +191,7 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
                   fill={getPointColor(entry.bias)}
                   r={8}
                   opacity={0.85}
-                  style={{ cursor: "pointer" }}
-                  data-dot-animated="true"
+                  style={{ cursor: "pointer", transition: "all 0.3s ease" }}
                 />
               ))}
             </Scatter>

@@ -35,11 +35,13 @@ export function FooterSection() {
           </p>
 
           {/* Disclaimer inline */}
-          <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            {lang === "sl"
-              ? "To je izobraževalno orodje za analizo medijev. Ocene so informativne narave in ne predstavljajo absolutne resnice. Spodbujamo kritično presojo. Orodje lahko vsebuje napake."
-              : "This is an educational tool for analyzing media outlets. Ratings are informational and do not represent absolute truth. We encourage critical thinking. The tool may contain errors."}
-          </p>
+          <div className="mt-6 pt-4 pb-2">
+            <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {lang === "sl"
+                ? "To je izobraževalno orodje za analizo medijev. Ocene so informativne narave in ne predstavljajo absolutne resnice. Spodbujamo kritično presojo. Orodje lahko vsebuje napake."
+                : "This is an educational tool for analyzing media outlets. Ratings are informational and do not represent absolute truth. We encourage critical thinking. The tool may contain errors."}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

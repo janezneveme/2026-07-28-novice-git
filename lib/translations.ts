@@ -9,7 +9,7 @@ export const translations = {
     
     // Hero
     heroTitle: "Raziskujte slovenski medijski prostor",
-    heroDescription: "Izobraževalno orodje za osveščenost državljanov o medijskem vplivu. Primerjajte politično pristranskost in zanesljivost dejstev slovenskih medijev ter razumite lastniške strukture. Nauči se kritično vrednotiti vire informacij in postani bolj izobražen ter razgledан državljan. Kliknite na katerokoli točko za podrobne informacije.",
+    heroDescription: "Analiza politične pristranskosti, zanesljivosti dejstev in lastniške strukture slovenskih medijev. Orodje omogoča primerjavo med mediji ter boljše razumevanje njihovega vpliva na javno mnenje. Podrobne informacije so dostopne z klikom na posamezni medij.",
     
     // Stats
     mediaOutlets: "Medijskih hiš",
