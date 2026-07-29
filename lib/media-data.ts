@@ -1083,7 +1083,7 @@ export const mediaOutlets: MediaOutlet[] = [
     },
     website: "https://rtvslo.si"
   },
-  // SDS media network (moved from internationalMediaOutlets - these are Slovenian regional portals)
+
   {
     id: 109,
     name: "e-Koroška",
@@ -1094,8 +1094,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://e-koroska.si",
     isPolitical: true,
@@ -1111,8 +1111,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://moja-dolenjska.si",
     isPolitical: true,
@@ -1128,8 +1128,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://mojeposavje.si",
     isPolitical: true,
@@ -1145,8 +1145,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://mojepodravje.si",
     isPolitical: true,
@@ -1179,8 +1179,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://e-maribor.si",
     isPolitical: true,
@@ -1196,8 +1196,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://primorska24.si",
     isPolitical: true,
@@ -1213,8 +1213,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://pomurske-novice.si",
     isPolitical: true,
@@ -1230,8 +1230,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://nase-zasavje.si",
     isPolitical: true,
@@ -1247,8 +1247,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://gorenjski-utrip.si",
     isPolitical: true,
@@ -1264,8 +1264,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://portal-os.si",
     isPolitical: true,
@@ -1281,8 +1281,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://sasa-novice.si",
     isPolitical: true,
@@ -1298,8 +1298,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://spodnjepodravje.si",
     isPolitical: true,
@@ -1315,8 +1315,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://celjskiglasnik.si",
     isPolitical: true,
@@ -1349,17 +1349,14 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "SDS-povezano (hobotnica)",
     ownerType: "Private-Tajkun",
     description: {
-      sl: "Regionalni novičarski portal s desničarsko usmerjenostjo, del SDS medijske mreže.",
-      en: "Regional news portal with right-wing orientation, part of SDS media network."
+      sl: "Del mreže lokalnih spletnih portalov, ki jih je dokumentirala organizacija Pod črto. Portali delijo vsebine, uredniško linijo in lastniško strukturo, povezano s stranko SDS. Kljub regionalnemu imenu pokrivajo pretežno strankarsko politiko.",
+      en: "Part of a network of local web portals documented by the fact-checking organization Pod črto. These portals share content, editorial direction, and an ownership structure linked to the SDS party. Despite regional branding, they primarily cover party politics."
     },
     website: "https://notranjska.si",
     isPolitical: true,
     network: "SDS media network"
   },
 ]
-
-// International media outlets
-export const internationalMediaOutlets: MediaOutlet[] = []
 
 export function getBiasLabel(bias: number, lang: "sl" | "en" = "sl"): string {
   const labels = {

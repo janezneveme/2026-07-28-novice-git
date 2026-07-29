@@ -6,6 +6,7 @@ import { ExternalLink, Newspaper, Tv, Radio, Globe, Rss, MapPin } from "lucide-r
 import type { MediaOutlet } from "@/lib/media-data"
 import { getBiasLabel, getBiasColor, getReliabilityLabel, getReliabilityColor } from "@/lib/media-data"
 import { useLanguage } from "@/lib/language-context"
+import { getTypeLabels, getContentLabels } from "@/lib/translations"
 
 interface MediaCardProps {
   media: MediaOutlet
@@ -30,20 +31,8 @@ function getTypeIcon(type: string) {
 export function MediaCard({ media, onClick }: MediaCardProps) {
   const { lang, t } = useLanguage()
   
-  const typeLabels: Record<string, string> = {
-    "Print": t.print,
-    "Web": t.web,
-    "TV": t.tv,
-    "Radio": t.radio,
-    "Print/Web": t.printWeb,
-    "Agency": t.agency,
-  }
-  
-  const contentLabels: Record<string, string> = {
-    "News": t.news,
-    "Opinion": t.opinion,
-    "Mixed": t.mixed,
-  }
+  const typeLabels = getTypeLabels(t)
+  const contentLabels = getContentLabels(t)
   
   return (
     <Card 

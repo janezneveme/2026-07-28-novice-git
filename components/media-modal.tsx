@@ -14,6 +14,7 @@ import { ExternalLink, Newspaper, Tv, Radio, Globe, Building2, User, Rss, MapPin
 import type { MediaOutlet } from "@/lib/media-data"
 import { getBiasLabel, getBiasColor, getReliabilityLabel, getReliabilityColor } from "@/lib/media-data"
 import { useLanguage } from "@/lib/language-context"
+import { getTypeLabels, getContentLabels } from "@/lib/translations"
 
 interface MediaModalProps {
   media: MediaOutlet | null
@@ -52,20 +53,8 @@ export function MediaModal({ media, open, onOpenChange }: MediaModalProps) {
 
   const biasPosition = ((media.bias + 1) / 2) * 100
   
-  const typeLabels: Record<string, string> = {
-    "Print": t.print,
-    "Web": t.web,
-    "TV": t.tv,
-    "Radio": t.radio,
-    "Print/Web": t.printWeb,
-    "Agency": t.agency,
-  }
-  
-  const contentLabels: Record<string, string> = {
-    "News": t.news,
-    "Opinion": t.opinion,
-    "Mixed": t.mixed,
-  }
+  const typeLabels = getTypeLabels(t)
+  const contentLabels = getContentLabels(t)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -102,10 +91,10 @@ export function MediaModal({ media, open, onOpenChange }: MediaModalProps) {
               <AlertCircle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-sm font-semibold text-amber-900 dark:text-amber-100 mb-1">
-                  {lang === "sl" ? t.sdsNetworkWarning : t.sdsNetworkWarning}
+                  {t.sdsNetworkWarning}
                 </p>
                 <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
-                  {lang === "sl" ? t.sdsNetworkDescription : t.sdsNetworkDescription}
+                  {t.sdsNetworkDescription}
                 </p>
               </div>
             </div>
@@ -138,7 +127,7 @@ export function MediaModal({ media, open, onOpenChange }: MediaModalProps) {
             <Badge variant="secondary">{contentLabels[media.contentType]}</Badge>
             <p className="text-xs text-muted-foreground leading-relaxed">
               {media.contentType === "News" && (lang === "sl" 
-                ? "Novični medij: Zanesljivost se meri po natančnosti podatkov, kakovosti virov in ločevanju novic od mnenj."
+                ? "Novični medij: Zanesljivost se meri po točnosti podatkov, kakovosti virov in ločevanju novic od mnenj."
                 : "News outlet: Reliability is measured by accuracy, source quality, and clear separation of news from opinion."
               )}
               {media.contentType === "Opinion" && (lang === "sl"

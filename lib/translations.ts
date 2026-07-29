@@ -287,6 +287,35 @@ export const translations = {
   },
 } as const
 
+export function getTypeLabels(t: typeof translations.sl) {
+  return {
+    "Print": t.print,
+    "Web": t.web,
+    "TV": t.tv,
+    "Radio": t.radio,
+    "Print/Web": t.printWeb,
+    "Agency": t.agency,
+  } as Record<string, string>
+}
+
+export function getContentLabels(t: typeof translations.sl) {
+  return {
+    "News": t.news,
+    "Opinion": t.opinion,
+    "Mixed": t.mixed,
+  } as Record<string, string>
+}
+
+export function getOwnerLabels(t: typeof translations.sl) {
+  return {
+    "State-owned": t.stateOwned,
+    "Private": t.private,
+    "Private-Tajkun": t.privateTajkun,
+    "Foreign": t.foreign,
+    "Non-profit": t.nonProfit,
+  } as Record<string, string>
+}
+
 export type TranslationKey = keyof typeof translations.en
 
 export function useTranslation(lang: Language) {

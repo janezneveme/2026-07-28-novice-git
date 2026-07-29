@@ -7,13 +7,17 @@ import { ReliabilityScaleVisual } from "@/components/formatted-text"
 import { useLanguage } from "@/lib/language-context"
 
 export function MethodologySection() {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
 
   const resources = [
-    { name: "Pod črto", url: "https://podcrto.si", description: "Fact-checking and investigative journalism" },
-    { name: "Oštro", url: "https://ostro.si", description: "Independent research and journalism" },
-    { name: "Reporters without Borders", url: "https://rsf.org", description: "Global media freedom index" },
-    { name: "NewsGuard", url: "https://www.newsguardtech.com", description: "Media reliability ratings" },
+    { name: "Pod črto", url: "https://podcrto.si",
+      description: lang === "sl" ? "Preverjanje dejstev in raziskovalno novinarstvo" : "Fact-checking and investigative journalism" },
+    { name: "Oštro", url: "https://ostro.si",
+      description: lang === "sl" ? "Čezmejno neodvisno raziskovalno novinarstvo" : "Cross-border independent investigative journalism" },
+    { name: "Reporters without Borders", url: "https://rsf.org",
+      description: lang === "sl" ? "Svetovni indeks medijske svobode" : "Global media freedom index" },
+    { name: "NewsGuard", url: "https://www.newsguardtech.com",
+      description: lang === "sl" ? "Ocene zanesljivosti medijev" : "Media reliability ratings" },
   ]
 
   return (
@@ -50,7 +54,7 @@ export function MethodologySection() {
                     {t.reliabilityExplanation}
                   </p>
                   <div className="my-4">
-                    <ReliabilityScaleVisual />
+                    <ReliabilityScaleVisual lang={lang} />
                   </div>
                 </div>
 
@@ -59,21 +63,27 @@ export function MethodologySection() {
                   
                   <div className="ml-3 space-y-3">
                     <div>
-                      <p className="text-xs font-medium text-foreground">Novični mediji (News)</p>
+                      <p className="text-xs font-medium text-foreground">
+                        {lang === "sl" ? "Novični mediji (News)" : "News Outlets"}
+                      </p>
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         {t.contentTypeExplanationNews}
                       </p>
                     </div>
                     
                     <div>
-                      <p className="text-xs font-medium text-foreground">Mnenjski mediji (Opinion)</p>
+                      <p className="text-xs font-medium text-foreground">
+                        {lang === "sl" ? "Mnenjski mediji (Opinion)" : "Opinion Outlets"}
+                      </p>
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         {t.contentTypeExplanationOpinion}
                       </p>
                     </div>
                     
                     <div>
-                      <p className="text-xs font-medium text-foreground">Mešani mediji (Mixed)</p>
+                      <p className="text-xs font-medium text-foreground">
+                        {lang === "sl" ? "Mešani mediji (Mixed)" : "Mixed Outlets"}
+                      </p>
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         {t.contentTypeExplanationMixed}
                       </p>

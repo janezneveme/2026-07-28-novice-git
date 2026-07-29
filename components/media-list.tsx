@@ -23,6 +23,7 @@ import { Search, ArrowUpDown, ExternalLink } from "lucide-react"
 import type { MediaOutlet } from "@/lib/media-data"
 import { getBiasLabel, getBiasColor, getReliabilityColor } from "@/lib/media-data"
 import { useLanguage } from "@/lib/language-context"
+import { getTypeLabels } from "@/lib/translations"
 
 interface MediaListProps {
   data: MediaOutlet[]
@@ -60,14 +61,7 @@ export function MediaList({ data, onSelectMedia }: MediaListProps) {
     }
   }
   
-  const typeLabels: Record<string, string> = {
-    "Print": t.print,
-    "Web": t.web,
-    "TV": t.tv,
-    "Radio": t.radio,
-    "Print/Web": t.printWeb,
-    "Agency": t.agency,
-  }
+  const typeLabels = getTypeLabels(t)
 
   return (
     <div className="space-y-4">

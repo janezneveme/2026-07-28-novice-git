@@ -10,7 +10,7 @@ interface StatsCardsProps {
 }
 
 export function StatsCards({ data }: StatsCardsProps) {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
   
   const totalMedia = data.length
   const avgReliability = data.length > 0 
@@ -59,11 +59,11 @@ export function StatsCards({ data }: StatsCardsProps) {
             </div>
             <div>
               <div className="flex items-center gap-1.5 text-lg font-bold">
-                <span className="text-blue-600">{leftCount}L</span>
+                <span className="text-blue-600">{leftCount}{lang === "sl" ? "L" : "L"}</span>
                 <span className="text-muted-foreground/50">/</span>
-                <span className="text-slate-600">{centerCount}S</span>
+                <span className="text-slate-600">{centerCount}{lang === "sl" ? "S" : "C"}</span>
                 <span className="text-muted-foreground/50">/</span>
-                <span className="text-red-600">{rightCount}D</span>
+                <span className="text-red-600">{rightCount}{lang === "sl" ? "D" : "R"}</span>
               </div>
               <p className="text-sm text-muted-foreground">{t.distribution}</p>
             </div>

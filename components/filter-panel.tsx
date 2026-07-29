@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { RotateCcw, Landmark } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { getTypeLabels, getOwnerLabels } from "@/lib/translations"
 
 export interface FilterState {
   types: string[]
@@ -28,22 +29,8 @@ const ownerTypes = ["State-owned", "Private", "Private-Tajkun", "Foreign", "Non-
 export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
   const { t } = useLanguage()
   
-  const typeLabels: Record<string, string> = {
-    "Print": t.print,
-    "Web": t.web,
-    "TV": t.tv,
-    "Radio": t.radio,
-    "Print/Web": t.printWeb,
-    "Agency": t.agency,
-  }
-  
-  const ownerLabels: Record<string, string> = {
-    "State-owned": t.stateOwned,
-    "Private": t.private,
-    "Private-Tajkun": t.privateTajkun,
-    "Foreign": t.foreign,
-    "Non-profit": t.nonProfit,
-  }
+  const typeLabels = getTypeLabels(t)
+  const ownerLabels = getOwnerLabels(t)
 
   const toggleFilter = (category: "types" | "ownerTypes", value: string) => {
     const current = filters[category]
