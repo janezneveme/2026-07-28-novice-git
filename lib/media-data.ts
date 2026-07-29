@@ -1,3 +1,5 @@
+export const DATA_LAST_UPDATED = "2026-07-27"
+
 export interface MediaOutlet {
   id: number
   name: string
@@ -31,8 +33,8 @@ export const mediaOutlets: MediaOutlet[] = [
     owner: "Kolektor (Stojan Petrič)",
     ownerType: "Private",
     description: {
-      sl: "Najstarejši slovenski dnevnik, ustanovljen leta 1959. Znan po poglobljenih poročilih in analizah.",
-      en: "Oldest Slovenian daily newspaper, founded in 1959. Known for in-depth reporting and analysis."
+      sl: "Največji slovenski dnevnik, ki izhaja od leta 1959. Znan po poglobljenih poročilih in analizah.",
+      en: "Largest Slovenian daily newspaper in circulation since 1959. Known for in-depth reporting and analysis."
     },
     website: "https://delo.si",
     podcrtoLink: "https://podcrto.si/delo",
@@ -181,10 +183,10 @@ export const mediaOutlets: MediaOutlet[] = [
     type: "Web",
     contentType: "Mixed",
     owner: "Telekom Slovenije",
-    ownerType: "State-owned",
+    ownerType: "Private",
     description: {
-      sl: "Spletni novičarski portal s širokim naborom tem od novic do zabave, tabloidni pristop.",
-      en: "Online news portal with wide range of topics from news to entertainment, tabloid approach."
+      sl: "Spletni novičarski portal s širokim naborom tem od novic do zabave. Telekom Slovenije je delno v državni lasti, vendar je formalno zasebna družba.",
+      en: "Online news portal with wide range of topics from news to entertainment. Telekom Slovenije is partially state-owned but formally operates as a private company."
     },
     website: "https://siol.net",
     isPolitical: true
@@ -292,7 +294,7 @@ export const mediaOutlets: MediaOutlet[] = [
     reliability: 0.50,
     type: "Web",
     contentType: "Opinion",
-    owner: "Inštitut Encyclopaedia Encyclopaediana",
+    owner: "Inštitut Encyclopaedia",
     ownerType: "Private",
     description: {
       sl: "Konservativni spletni medij z osredotočenostjo na tradicionalne vrednote.",
@@ -480,10 +482,10 @@ export const mediaOutlets: MediaOutlet[] = [
     type: "TV",
     contentType: "Mixed",
     owner: "Telekom Slovenije",
-    ownerType: "State-owned",
+    ownerType: "Private",
     description: {
-      sl: "Komercialna televizija v lasti Telekoma Slovenije.",
-      en: "Commercial television owned by Telekom Slovenije."
+      sl: "Komercialna televizija v lasti Telekoma Slovenije. Telekom Slovenije je delno v državni lasti, vendar je formalno zasebna družba.",
+      en: "Commercial television owned by Telekom Slovenije. Telekom Slovenije is partially state-owned but formally operates as a private company."
     },
     website: "https://siol.net/planet-tv"
   },
@@ -1079,11 +1081,7 @@ export const mediaOutlets: MediaOutlet[] = [
     },
     website: "https://rtvslo.si"
   },
-]
-
-// International media outlets
-export const internationalMediaOutlets: MediaOutlet[] = [
-  // SDS media network (Pod črto report)
+  // SDS media network (moved from internationalMediaOutlets - these are Slovenian regional portals)
   {
     id: 109,
     name: "e-Koroška",
@@ -1341,6 +1339,9 @@ export const internationalMediaOutlets: MediaOutlet[] = [
     isPolitical: true
   },
 ]
+
+// International media outlets
+export const internationalMediaOutlets: MediaOutlet[] = []
 
 export function getBiasLabel(bias: number, lang: "sl" | "en" = "sl"): string {
   const labels = {

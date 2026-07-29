@@ -22,10 +22,10 @@ function MediaAtlasContent() {
   const [selectedMedia, setSelectedMedia] = useState<MediaOutlet | null>(null)
   const [modalOpen, setModalOpen] = useState(false)
   const [filters, setFilters] = useState<FilterState>({
-    types: ["Web"],
+    types: [],
     ownerTypes: [],
     minReliability: 0,
-    politicalOnly: true,
+    politicalOnly: false,
   })
 
   /**
@@ -84,8 +84,9 @@ function MediaAtlasContent() {
         />
         <ResourcesSection />
         <MethodologySection />
-        <FooterSection />
       </main>
+
+      <FooterSection />
 
       <MediaModal
         media={selectedMedia}

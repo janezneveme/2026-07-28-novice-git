@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: 'Medijski Atlas | Pregled slovenskega medijskega prostora',
@@ -27,6 +27,18 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  openGraph: {
+    title: 'Medijski Atlas',
+    description: 'Analizirajte politično pristranskost, zanesljivost in lastniške strukture slovenskih medijev.',
+    type: 'website',
+    locale: 'sl_SI',
+    siteName: 'Medijski Atlas',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Medijski Atlas',
+    description: 'Analizirajte politično pristranskost, zanesljivost in lastniške strukture slovenskih medijev.',
+  },
 }
 
 export default function RootLayout({
@@ -36,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sl">
-      <body className="font-sans antialiased">
+      <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
