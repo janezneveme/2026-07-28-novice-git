@@ -62,6 +62,9 @@ function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
 export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChartProps) {
   const { lang, t } = useLanguage()
   
+  // Sort data consistently by ID to ensure points never change position
+  const sortedData = [...data].sort((a, b) => a.id - b.id)
+  
   const centerLabel = lang === "sl" ? "Politična sredina" : "Political center"
   const reliabilityThreshold = lang === "sl" ? "Prag zanesljivosti (60%)" : "Reliability threshold (60%)"
   const excludedLabel = lang === "sl" ? "Izključeno" : "Excluded"
@@ -174,11 +177,11 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
               } 
             />
             <Scatter
-              data={data}
+              data={sortedData}
               cursor="pointer"
               onClick={(data) => onSelectMedia(data as unknown as MediaOutlet)}
             >
-              {data.map((entry) => (
+              {sortedData.map((entry) => (
                 <Cell
                   key={entry.id}
                   fill={getPointColor(entry.bias)}

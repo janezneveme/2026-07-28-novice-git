@@ -7,7 +7,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
-import { RotateCcw, Landmark, ChevronDown, ChevronUp } from "lucide-react"
+import { RotateCcw, Landmark } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 
 export interface FilterState {
@@ -27,7 +27,6 @@ const ownerTypes = ["State-owned", "Private", "Private-Tajkun", "Foreign", "Non-
 
 export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
   const { t } = useLanguage()
-  const [showAdvanced, setShowAdvanced] = useState(false)
   
   const typeLabels: Record<string, string> = {
     "Print": t.print,
@@ -59,7 +58,7 @@ export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
       types: [],
       ownerTypes: [],
       minReliability: 0,
-      politicalOnly: false,
+      politicalOnly: true,
     })
   }
 
@@ -128,69 +127,49 @@ export function FilterPanel({ filters, onFiltersChange }: FilterPanelProps) {
           />
         </div>
 
-        {/* Advanced Filters Toggle */}
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setShowAdvanced(!showAdvanced)}
-          className="w-full justify-between"
-        >
-          <span>{t.advancedFilters}</span>
-          {showAdvanced ? (
-            <ChevronUp className="h-4 w-4" />
-          ) : (
-            <ChevronDown className="h-4 w-4" />
-          )}
-        </Button>
-
-        {/* Advanced Filters - Hidden by default */}
-        {showAdvanced && (
-          <>
-            {/* Media Type */}
-            <div className="space-y-2 pt-4 border-t border-border">
-              <Label className="text-sm font-medium">{t.mediaType}</Label>
-              <div className="grid grid-cols-2 gap-1.5">
-                {mediaTypes.map((type) => (
-                  <div key={type} className="flex items-center gap-2">
-                    <Checkbox
-                      id={`type-${type}`}
-                      checked={filters.types.includes(type)}
-                      onCheckedChange={() => toggleFilter("types", type)}
-                    />
-                    <label
-                      htmlFor={`type-${type}`}
-                      className="text-xs text-muted-foreground cursor-pointer"
-                    >
-                      {typeLabels[type]}
-                    </label>
-                  </div>
-                ))}
+        {/* Media Type */}
+        <div className="space-y-2 pt-4 border-t border-border">
+          <Label className="text-sm font-medium">{t.mediaType}</Label>
+          <div className="grid grid-cols-2 gap-1.5">
+            {mediaTypes.map((type) => (
+              <div key={type} className="flex items-center gap-2">
+                <Checkbox
+                  id={`type-${type}`}
+                  checked={filters.types.includes(type)}
+                  onCheckedChange={() => toggleFilter("types", type)}
+                />
+                <label
+                  htmlFor={`type-${type}`}
+                  className="text-xs text-muted-foreground cursor-pointer"
+                >
+                  {typeLabels[type]}
+                </label>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
 
-            {/* Ownership */}
-            <div className="space-y-2">
-              <Label className="text-sm font-medium">{t.ownership}</Label>
-              <div className="space-y-1.5">
-                {ownerTypes.map((type) => (
-                  <div key={type} className="flex items-center gap-2">
-                    <Checkbox
-                      id={`owner-${type}`}
-                      checked={filters.ownerTypes.includes(type)}
-                      onCheckedChange={() => toggleFilter("ownerTypes", type)}
-                    />
-                    <label
-                      htmlFor={`owner-${type}`}
-                      className="text-xs text-muted-foreground cursor-pointer"
-                    >
-                      {ownerLabels[type]}
-                    </label>
-                  </div>
-                ))}
+        {/* Ownership */}
+        <div className="space-y-2">
+          <Label className="text-sm font-medium">{t.ownership}</Label>
+          <div className="space-y-1.5">
+            {ownerTypes.map((type) => (
+              <div key={type} className="flex items-center gap-2">
+                <Checkbox
+                  id={`owner-${type}`}
+                  checked={filters.ownerTypes.includes(type)}
+                  onCheckedChange={() => toggleFilter("ownerTypes", type)}
+                />
+                <label
+                  htmlFor={`owner-${type}`}
+                  className="text-xs text-muted-foreground cursor-pointer"
+                >
+                  {ownerLabels[type]}
+                </label>
               </div>
-            </div>
-          </>
-        )}
+            ))}
+          </div>
+        </div>
       </CardContent>
     </Card>
   )
