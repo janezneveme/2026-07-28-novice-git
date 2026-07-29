@@ -200,7 +200,7 @@ export const mediaOutlets: MediaOutlet[] = [
     reliability: 0.35,
     type: "Print/Web",
     contentType: "Mixed",
-    owner: "Salomon 2000 d.o.o. (Rok Snežič)",
+    owner: "Salomon 2000 d.o.o.",
     ownerType: "Private-Tajkun",
     description: {
       sl: "Desničarski tedenski časopis z osredotočenostjo na politiko in gospodarstvo.",

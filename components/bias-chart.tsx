@@ -32,42 +32,7 @@ interface CustomTooltipProps {
   }
 }
 
-interface CustomDotProps {
-  cx?: number
-  cy?: number
-  fill?: string
-  r?: number
-  payload?: MediaOutlet
-}
 
-function CustomDot({ cx, cy, fill, r, payload }: CustomDotProps) {
-  return (
-    <g>
-      <circle
-        cx={cx}
-        cy={cy}
-        r={r}
-        fill={fill}
-        opacity={0.85}
-        style={{
-          animation: "dotFadeIn 0.4s ease-in-out",
-        }}
-      />
-      <style>{`
-        @keyframes dotFadeIn {
-          0% {
-            r: 1px;
-            opacity: 0;
-          }
-          100% {
-            r: ${r}px;
-            opacity: 0.85;
-          }
-        }
-      `}</style>
-    </g>
-  )
-}
 
 function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
   if (active && payload && payload.length) {
@@ -217,16 +182,16 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
             <Scatter
               data={data}
               cursor="pointer"
-              isAnimationActive={true}
-              animationDuration={400}
-              animationEasing="ease-in-out"
-              shape={<CustomDot r={8} />}
+              isAnimationActive={false}
               onClick={(point) => onSelectMedia(point as unknown as MediaOutlet)}
             >
               {data.map((entry) => (
                 <Cell
                   key={`cell-${entry.id}`}
                   fill={getPointColor(entry.bias)}
+                  r={8}
+                  opacity={0.85}
+                  style={{ cursor: "pointer" }}
                 />
               ))}
             </Scatter>
