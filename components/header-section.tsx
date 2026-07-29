@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Info, MapIcon } from "lucide-react"
 import { LanguageToggle } from "@/components/language-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { useLanguage } from "@/lib/language-context"
 
 export function HeaderSection() {
@@ -21,7 +22,8 @@ export function HeaderSection() {
               <p className="text-xs text-muted-foreground">{t.appSubtitle}</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
             <LanguageToggle />
             <Button variant="outline" size="sm" asChild className="hidden sm:flex">
               <a href="#methodology">

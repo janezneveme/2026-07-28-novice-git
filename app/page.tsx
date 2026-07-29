@@ -25,7 +25,7 @@ function MediaAtlasContent() {
     types: [],
     ownerTypes: [],
     minReliability: 0,
-    politicalOnly: false,
+    politicalOnly: true,
   })
 
   /**
