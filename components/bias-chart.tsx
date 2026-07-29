@@ -62,8 +62,9 @@ function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
 export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChartProps) {
   const { lang, t } = useLanguage()
   
-  // Sort data consistently by ID to ensure points never change position
-  const sortedData = [...data].sort((a, b) => a.id - b.id)
+  // Create a Map of all media by ID for consistent rendering
+  // This ensures points maintain their position even when data is filtered
+  const allMediaMap = new Map(data.map(m => [m.id, m]))
   
   const centerLabel = lang === "sl" ? "Politična sredina" : "Political center"
   const reliabilityThreshold = lang === "sl" ? "Prag zanesljivosti (60%)" : "Reliability threshold (60%)"
@@ -71,30 +72,6 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
   
   return (
     <div className="relative w-full">
-      {/* Reliability Legend */}
-      <div className="grid grid-cols-4 gap-2 mb-4 text-center">
-        <div className="space-y-1">
-          <div className="h-3 bg-red-500/60 rounded-sm" />
-          <p className="text-[10px] font-medium">0–34%</p>
-          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Zelo nizka" : "Very Low"}</p>
-        </div>
-        <div className="space-y-1">
-          <div className="h-3 bg-orange-500/60 rounded-sm" />
-          <p className="text-[10px] font-medium">35–54%</p>
-          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Nizka" : "Low"}</p>
-        </div>
-        <div className="space-y-1">
-          <div className="h-3 bg-amber-500/60 rounded-sm" />
-          <p className="text-[10px] font-medium">55–74%</p>
-          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Srednja" : "Medium"}</p>
-        </div>
-        <div className="space-y-1">
-          <div className="h-3 bg-emerald-500/60 rounded-sm" />
-          <p className="text-[10px] font-medium">75–100%</p>
-          <p className="text-[10px] text-muted-foreground">{lang === "sl" ? "Visoka" : "High"}</p>
-        </div>
-      </div>
-
       {/* Chart container with proper aspect ratio */}
       <div className="h-[500px] w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -201,20 +178,17 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
               } 
             />
             <Scatter
-              data={sortedData}
+              data={data}
               cursor="pointer"
-              onClick={(data) => onSelectMedia(data as unknown as MediaOutlet)}
+              onClick={(point) => onSelectMedia(point as unknown as MediaOutlet)}
             >
-              {sortedData.map((entry) => (
+              {data.map((entry) => (
                 <Cell
-                  key={entry.id}
+                  key={`cell-${entry.id}`}
                   fill={getPointColor(entry.bias)}
                   r={8}
-                  className="hover:opacity-100 transition-all duration-200"
-                  style={{
-                    filter: "drop-shadow(0 0 0px rgba(0,0,0,0))",
-                    opacity: 0.85
-                  }}
+                  className="hover:opacity-100 transition-opacity duration-150"
+                  style={{ opacity: 0.85 }}
                 />
               ))}
             </Scatter>

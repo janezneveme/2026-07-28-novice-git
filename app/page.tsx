@@ -64,15 +64,17 @@ function MediaAtlasContent() {
   const handleSelectMedia = (media: MediaOutlet) => {
     setSelectedMedia(media)
     setModalOpen(true)
-    // Update URL hash
-    window.history.replaceState(null, '', `#media=${media.name.toLowerCase().replace(/\s+/g, '-')}`)
+    // Update URL hash with proper encoding for special characters
+    const slug = encodeURIComponent(media.name.toLowerCase().replace(/\s+/g, '-'))
+    window.history.replaceState(null, '', `#media=${slug}`)
   }
 
   // Handle URL hash on component mount and when modal closes
   useEffect(() => {
     const hash = window.location.hash
     if (hash.startsWith('#media=')) {
-      const slug = hash.replace('#media=', '')
+      const encodedSlug = hash.replace('#media=', '')
+      const slug = decodeURIComponent(encodedSlug)
       const found = mediaOutlets.find(m => 
         m.name.toLowerCase().replace(/\s+/g, '-') === slug
       )
