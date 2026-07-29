@@ -180,6 +180,7 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
             <Scatter
               data={data}
               cursor="pointer"
+              isAnimationActive={false}
               onClick={(point) => onSelectMedia(point as unknown as MediaOutlet)}
             >
               {data.map((entry) => (
