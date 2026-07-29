@@ -21,6 +21,7 @@ export interface MediaOutlet {
   isPolitical?: boolean // true if the media outlet covers political news
   logo?: string // Optional path to logo image, e.g., /logos/delo.png
   network?: string // Optional network affiliation, e.g., "SDS media network"
+  relatedMediaIds?: number[] // IDs of related media outlets (same company/network with different types)
 }
 
 export const mediaOutlets: MediaOutlet[] = [
@@ -142,7 +143,8 @@ export const mediaOutlets: MediaOutlet[] = [
     },
     website: "https://nova24tv.si",
     podcrtoLink: "https://podcrto.si/nova24tv",
-    isPolitical: true
+    isPolitical: true,
+    relatedMediaIds: [125]
   },
   {
     id: 8,
@@ -1355,6 +1357,23 @@ export const mediaOutlets: MediaOutlet[] = [
     website: "https://notranjska.si",
     isPolitical: true,
     network: "SDS media network"
+  },
+  {
+    id: 125,
+    name: "nova24tv.si",
+    bias: 0.85,
+    reliability: 0.25,
+    type: "Web",
+    contentType: "Opinion",
+    owner: "Madžarski vlagatelji (povezani z Orbánom)",
+    ownerType: "Foreign",
+    description: {
+      sl: "Spletni portal povezan z Nova24TV kanalom. Objavlja desničarske članke in politično usmerjeno vsebino.",
+      en: "Web portal associated with Nova24TV channel. Publishes right-wing articles and politically oriented content."
+    },
+    website: "https://nova24tv.si",
+    isPolitical: true,
+    relatedMediaIds: [7]
   },
 ]
 

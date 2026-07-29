@@ -64,23 +64,31 @@ function MediaAtlasContent() {
     setSelectedMedia(media)
     setModalOpen(true)
     // Update URL hash with proper encoding for special characters
-    const slug = encodeURIComponent(media.name.toLowerCase().replace(/\s+/g, '-'))
-    window.history.replaceState(null, '', `#media=${slug}`)
+    try {
+      const slug = encodeURIComponent(media.name.toLowerCase().replace(/\s+/g, '-'))
+      window.history.replaceState(null, '', `#media=${slug}`)
+    } catch (error) {
+      console.error('[v0] Error updating URL hash:', error)
+    }
   }
 
   // Handle URL hash on component mount and when modal closes
   useEffect(() => {
-    const hash = window.location.hash
-    if (hash.startsWith('#media=')) {
-      const encodedSlug = hash.replace('#media=', '')
-      const slug = decodeURIComponent(encodedSlug)
-      const found = mediaOutlets.find(m => 
-        m.name.toLowerCase().replace(/\s+/g, '-') === slug
-      )
-      if (found) {
-        setSelectedMedia(found)
-        setModalOpen(true)
+    try {
+      const hash = window.location.hash
+      if (hash.startsWith('#media=')) {
+        const encodedSlug = hash.replace('#media=', '')
+        const slug = decodeURIComponent(encodedSlug)
+        const found = mediaOutlets.find(m => 
+          m.name.toLowerCase().replace(/\s+/g, '-') === slug
+        )
+        if (found) {
+          setSelectedMedia(found)
+          setModalOpen(true)
+        }
       }
+    } catch (error) {
+      console.error('[v0] Error handling URL hash:', error)
     }
   }, [])
 
