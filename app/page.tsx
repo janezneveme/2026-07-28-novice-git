@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { mediaOutlets, type MediaOutlet } from "@/lib/media-data"
 import { MediaModal } from "@/components/media-modal"
 import { FilterPanel, type FilterState } from "@/components/filter-panel"
@@ -63,6 +63,30 @@ function MediaAtlasContent() {
   const handleSelectMedia = (media: MediaOutlet) => {
     setSelectedMedia(media)
     setModalOpen(true)
+    // Update URL hash
+    window.history.replaceState(null, '', `#media=${media.name.toLowerCase().replace(/\s+/g, '-')}`)
+  }
+
+  // Handle URL hash on component mount and when modal closes
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash.startsWith('#media=')) {
+      const slug = hash.replace('#media=', '')
+      const found = mediaOutlets.find(m => 
+        m.name.toLowerCase().replace(/\s+/g, '-') === slug
+      )
+      if (found) {
+        setSelectedMedia(found)
+        setModalOpen(true)
+      }
+    }
+  }, [])
+
+  const handleModalClose = (open: boolean) => {
+    setModalOpen(open)
+    if (!open) {
+      window.history.replaceState(null, '', window.location.pathname)
+    }
   }
 
   return (
@@ -91,7 +115,7 @@ function MediaAtlasContent() {
       <MediaModal
         media={selectedMedia}
         open={modalOpen}
-        onOpenChange={setModalOpen}
+        onOpenChange={handleModalClose}
       />
     </div>
   )

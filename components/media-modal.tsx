@@ -10,7 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { ExternalLink, Newspaper, Tv, Radio, Globe, Building2, User, Rss, MapPin } from "lucide-react"
+import { ExternalLink, Newspaper, Tv, Radio, Globe, Building2, User, Rss, MapPin, AlertCircle } from "lucide-react"
 import type { MediaOutlet } from "@/lib/media-data"
 import { getBiasLabel, getBiasColor, getReliabilityLabel, getReliabilityColor } from "@/lib/media-data"
 import { useLanguage } from "@/lib/language-context"
@@ -95,6 +95,21 @@ export function MediaModal({ media, open, onOpenChange }: MediaModalProps) {
           <p className="text-sm text-muted-foreground leading-relaxed">
             {media.description[lang]}
           </p>
+
+          {/* SDS Network Warning */}
+          {media.network && (
+            <div className="flex gap-3 p-3 rounded-lg bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800">
+              <AlertCircle className="h-5 w-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-amber-900 dark:text-amber-100 mb-1">
+                  {lang === "sl" ? t.sdsNetworkWarning : t.sdsNetworkWarning}
+                </p>
+                <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+                  {lang === "sl" ? t.sdsNetworkDescription : t.sdsNetworkDescription}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Political Bias Scale */}
           <div className="space-y-2">

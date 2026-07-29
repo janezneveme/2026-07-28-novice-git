@@ -96,13 +96,13 @@ export const translations = {
     reliabilityTab: "Zanesljivost",
     sourcesTab: "Viri",
     howBiasDetermined: "Kako se določa pristranskost",
-    biasExplanation: "Ocene politične pristranskosti temeljijo na analizi uredniških stališč, izbire gostov, okvirjanja zgodb in jezikovnih vzorcev. Ocene segajo od -1 (močno levo) do +1 (močno desno), pri čemer 0 predstavlja nevtralno poročanje. Viri vključujejo akademske raziskave in organizacije za preverjanje dejstev.",
+    biasExplanation: "Ocene politične pristranskosti temeljijo na analizi uredniških stališč, izbire gostov, okvirjanja zgodb in jezikovnih vzorcev. Ocene segajo od -1 (močno levo) do +1 (močno desno), pri čemer 0 predstavlja nevtralno poročanje. Viri vključujejo akademske raziskave in organizacije za preverjanje dejstev. Pristranskost ne pomeni avtomatično nepravilnega poročanja — le posebne interese ali vrijednostno orientacijo uredništva.",
     contentTypeExplanation: "Informativni mediji",
     contentTypeExplanationNews: "Mediji, ki se osredotočajo na poročanje o dejstvih in novicah. Zanesljivost se meri po točnosti podatkov, kakovosti virov in ločevanju novic od mnenj.",
     contentTypeExplanationOpinion: "Mediji ali sekcije s poudarkom na mnenjih, analizi in komentarjih. Zanesljivost se tukaj nanaša na to, kako temeljijo mnenja na realnih ali nerealnih podatkih ter ali avtorji ustrezno razlikujejo med dejstvi in mnenji.",
     contentTypeExplanationMixed: "Mediji s kombinacijo novic in mnenj. Zanesljivost se ocenjuje glede na ločevanje med obema vrstama vsebine.",
     reliabilityScoring: "Razumevanje zanesljivosti",
-    reliabilityExplanation: "Zanesljivost ni ista stvar za vse medije. Za faktične medije (novice) se zanesljivost meri po točnosti, kakovosti virov in politiki popravljanja napak. Za mnenjske medije je zanesljivost vezana na to, ali avtorji na resničnih podatkih temeljijo svoje mnenje ali ga podajo kot dejstvo. Višje ocene kažejo na večje upoštevanje novinarskih standardov in poštene argumentacije.",
+    reliabilityExplanation: "Zanesljivost ni ista stvar za vse medije. Za faktične medije (novice) se zanesljivost meri po točnosti, kakovosti virov in politiki popravljanja napak. Za mnenjske medije je zanesljivost vezana na to, ali avtorji na resničnih podatkih temeljijo svoje mnenje ali ga podajo kot dejstvo. Višje ocene kažejo na večje upoštevanje novinarskih standardov in poštene argumentacije. Nižje ocene nakazujejo na pogostejše napake, slabšo preverjanje dejstev ali nenamerno zavajanje.",
     dataSources: "Viri podatkov in povezave",
     dataSourcesExplanation: "Informacije so zbrane iz Pod črto, Oštro, akademskih medijskih študij in javnih registrov lastništva. Spodaj so povezave do ključnih virov za nadaljnje branje in preverjanje.",
     transparencyNote: "Opomba o transparentnosti",
@@ -138,6 +138,10 @@ export const translations = {
     mediaTools: "Orodja za analizo",
     mediaToolsDescription: "Platforme in baze podatkov za analizo bias-a in zanesljivosti medijev",
     viewAll: "Prikaži vse",
+    
+    // Network warnings
+    sdsNetworkWarning: "Del SDS medijske mreže",
+    sdsNetworkDescription: "Ta medij je del širše mreže regionalnih portalov s povezavo na SDS stranko. Do leta 2024 je Janez Janša prek »hobotnice« (mreže zasebnih podjetij) kontroliral ali vplival na te portale. Mediji imajo skladne uredniške politike in podobne vsebine.",
   },
   en: {
     // Header
@@ -234,13 +238,13 @@ export const translations = {
     reliabilityTab: "Reliability",
     sourcesTab: "Sources",
     howBiasDetermined: "How Bias is Determined",
-    biasExplanation: "Political bias scores are based on analysis of editorial positions, guest selection, story framing, and language patterns. Scores range from -1 (strong left) to +1 (strong right), with 0 representing centrist coverage. Sources include academic research and fact-checking organizations.",
+    biasExplanation: "Political bias scores are based on analysis of editorial positions, guest selection, story framing, and language patterns. Scores range from -1 (strong left) to +1 (strong right), with 0 representing neutral coverage. Sources include academic research and fact-checking organizations. Bias does not automatically mean inaccurate reporting — it simply reflects particular interests or value orientation of the editorial board.",
     contentTypeExplanation: "Understanding Content Types",
     contentTypeExplanationNews: "News outlets focus on factual reporting. Reliability here measures accuracy, source quality, and clear separation of news from opinion.",
     contentTypeExplanationOpinion: "Opinion-focused outlets emphasize analysis and commentary. Reliability here measures whether opinions are based on real or false data, and whether authors properly distinguish facts from opinions.",
     contentTypeExplanationMixed: "Mixed outlets combine news and opinion. Reliability is evaluated on how clearly they separate these types of content.",
     reliabilityScoring: "Understanding Reliability",
-    reliabilityExplanation: "Reliability means different things for different outlets. For factual media (news), reliability is measured by accuracy, source quality, and error correction policies. For opinion media, reliability relates to whether authors base opinions on real data or present opinions as facts. Higher scores indicate stronger adherence to journalistic standards and fair argumentation.",
+    reliabilityExplanation: "Reliability means different things for different outlets. For factual media (news), reliability is measured by accuracy, source quality, and error correction policies. For opinion media, reliability relates to whether authors base opinions on real data or present opinions as facts. Higher scores indicate stronger adherence to journalistic standards and fair argumentation. Lower scores suggest more frequent errors, poor fact-checking, or deliberate misleading.",
     dataSources: "Data Sources & Resources",
     dataSourcesExplanation: "Information is compiled from Pod črto, Oštro, academic media studies, and public ownership registries. Below are key resources for further reading and verification.",
     transparencyNote: "Transparency Note",
@@ -276,6 +280,10 @@ export const translations = {
     mediaTools: "Analysis Tools",
     mediaToolsDescription: "Platforms and databases to analyze media bias and reliability",
     viewAll: "View all",
+    
+    // Network warnings
+    sdsNetworkWarning: "Part of SDS media network",
+    sdsNetworkDescription: "This outlet is part of a broader network of regional portals affiliated with the SDS party. Until 2024, Janez Janša controlled or influenced these outlets through an informal 'network' of private companies. These outlets share similar editorial policies and content.",
   },
 } as const
 

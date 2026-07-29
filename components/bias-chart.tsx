@@ -36,15 +36,23 @@ function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
   if (active && payload && payload.length) {
     const data = payload[0].payload
     return (
-      <div className="rounded-lg border border-border bg-card p-3 shadow-lg">
+      <div className="rounded-lg border border-border bg-card p-3 shadow-lg max-w-xs">
         <p className="font-semibold text-foreground">{data.name}</p>
-        <p className="text-sm text-muted-foreground">
-          {t.bias}: {getBiasLabel(data.bias, lang)}
+        <p className="text-xs text-muted-foreground mt-1 leading-snug">
+          {data.description[lang]}
         </p>
-        <p className="text-sm text-muted-foreground">
-          {t.reliability}: {Math.round(data.reliability * 100)}%
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">{t.clickForDetails}</p>
+        <div className="border-t border-border my-2 pt-2 space-y-1">
+          <p className="text-sm text-muted-foreground">
+            {t.bias}: <span className="font-medium text-foreground">{getBiasLabel(data.bias, lang)}</span>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {t.reliability}: <span className="font-medium text-foreground">{Math.round(data.reliability * 100)}%</span>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {t.owner}: <span className="font-medium text-foreground">{data.owner}</span>
+          </p>
+        </div>
+        <p className="mt-2 text-xs text-muted-foreground italic">{t.clickForDetails}</p>
       </div>
     )
   }

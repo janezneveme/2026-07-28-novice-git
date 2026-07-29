@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookOpen, ExternalLink } from "lucide-react"
+import { BiasScaleVisual, ReliabilityScaleVisual } from "@/components/formatted-text"
 import { useLanguage } from "@/lib/language-context"
 
 export function MethodologySection() {
@@ -33,11 +34,17 @@ export function MethodologySection() {
             </TabsList>
 
             <TabsContent value="bias" className="space-y-4">
-              <div className="space-y-3">
-                <h4 className="text-base font-semibold">{t.howBiasDetermined}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {t.biasExplanation}
-                </p>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-base font-semibold mb-3">{t.howBiasDetermined}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    {t.biasExplanation}
+                  </p>
+                </div>
+                <div className="border-t border-border pt-4">
+                  <h5 className="text-sm font-semibold mb-3">{t.biasTab} - {t.left} → {t.right}</h5>
+                  <BiasScaleVisual />
+                </div>
               </div>
             </TabsContent>
 
@@ -48,6 +55,9 @@ export function MethodologySection() {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {t.reliabilityExplanation}
                   </p>
+                  <div className="my-4">
+                    <ReliabilityScaleVisual />
+                  </div>
                 </div>
 
                 <div className="border-t border-border pt-4 space-y-3">

@@ -19,6 +19,8 @@ export interface MediaOutlet {
   isInternational?: boolean
   country?: string
   isPolitical?: boolean // true if the media outlet covers political news
+  logo?: string // Optional path to logo image, e.g., /logos/delo.png
+  network?: string // Optional network affiliation, e.g., "SDS media network"
 }
 
 export const mediaOutlets: MediaOutlet[] = [
@@ -1096,7 +1098,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://e-koroska.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 110,
@@ -1112,7 +1115,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://moja-dolenjska.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 111,
@@ -1128,7 +1132,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://mojeposavje.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 112,
@@ -1144,7 +1149,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://mojepodravje.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 113,
@@ -1160,7 +1166,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "News portal with right-wing orientation, part of SDS media network."
     },
     website: "https://go-portal.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 114,
@@ -1176,7 +1183,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://e-maribor.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 115,
@@ -1192,7 +1200,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://primorska24.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 116,
@@ -1208,7 +1217,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://pomurske-novice.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 117,
@@ -1224,7 +1234,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://nase-zasavje.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 118,
@@ -1240,7 +1251,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://gorenjski-utrip.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 119,
@@ -1256,7 +1268,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://portal-os.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 120,
@@ -1272,7 +1285,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://sasa-novice.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 121,
@@ -1288,7 +1302,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://spodnjepodravje.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 122,
@@ -1304,7 +1319,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://celjskiglasnik.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 123,
@@ -1320,7 +1336,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "News portal with right-wing orientation, part of SDS media network."
     },
     website: "https://utrip-ljubljane.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
   {
     id: 124,
@@ -1336,7 +1353,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "Regional news portal with right-wing orientation, part of SDS media network."
     },
     website: "https://notranjska.si",
-    isPolitical: true
+    isPolitical: true,
+    network: "SDS media network"
   },
 ]
 
