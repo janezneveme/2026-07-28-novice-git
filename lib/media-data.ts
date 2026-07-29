@@ -273,7 +273,8 @@ export const mediaOutlets: MediaOutlet[] = [
       en: "24-hour news channel launched in 2020, part of CNN affiliate network."
     },
     website: "https://n1info.si",
-    isPolitical: true
+    isPolitical: true,
+    relatedMediaIds: [126]
   },
   {
     id: 16,
@@ -1374,6 +1375,23 @@ export const mediaOutlets: MediaOutlet[] = [
     website: "https://nova24tv.si",
     isPolitical: true,
     relatedMediaIds: [7]
+  },
+  {
+    id: 126,
+    name: "n1info.si",
+    bias: -0.1,
+    reliability: 0.78,
+    type: "Web",
+    contentType: "News",
+    owner: "United Media (United Group)",
+    ownerType: "Foreign",
+    description: {
+      sl: "Spletni portal povezan z N1 TV kanalom. Objavlja novice in aktualne dogodke.",
+      en: "Web portal associated with N1 TV channel. Publishes news and current events."
+    },
+    website: "https://n1info.si",
+    isPolitical: true,
+    relatedMediaIds: [15]
   },
 ]
 

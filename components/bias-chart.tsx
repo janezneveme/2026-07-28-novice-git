@@ -74,6 +74,39 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
   
   return (
     <div className="relative w-full">
+      {/* Animation styles for dots */}
+      <style>{`
+        @keyframes dotEnter {
+          0% {
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          100% {
+            opacity: 0.85;
+            transform: translateX(0);
+          }
+        }
+        
+        @keyframes dotExit {
+          0% {
+            opacity: 0.85;
+            transform: translateX(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+        }
+        
+        circle[data-dot-animated] {
+          animation: dotEnter 0.4s ease-out forwards;
+        }
+        
+        circle[data-dot-exit] {
+          animation: dotExit 0.3s ease-in forwards;
+        }
+      `}</style>
+      
       {/* Chart container with proper aspect ratio */}
       <div className="h-[500px] w-full">
         <ResponsiveContainer width="100%" height="100%">
@@ -192,6 +225,7 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
                   r={8}
                   opacity={0.85}
                   style={{ cursor: "pointer" }}
+                  data-dot-animated="true"
                 />
               ))}
             </Scatter>

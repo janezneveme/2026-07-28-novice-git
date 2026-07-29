@@ -34,10 +34,18 @@ export function MediaCard({ media, onClick }: MediaCardProps) {
   const typeLabels = getTypeLabels(t)
   const contentLabels = getContentLabels(t)
   
+  const handleClick = () => {
+    try {
+      onClick()
+    } catch (error) {
+      console.error("[v0] Error in media card click:", error)
+    }
+  }
+  
   return (
     <Card 
       className="cursor-pointer transition-all hover:shadow-lg hover:border-primary/30 hover:-translate-y-0.5"
-      onClick={onClick}
+      onClick={handleClick}
     >
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between gap-2">
