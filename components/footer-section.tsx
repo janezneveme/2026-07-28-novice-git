@@ -22,13 +22,23 @@ export function FooterSection() {
       </p>
 
       {/* Disclaimer */}
-      <div className="mt-6 pt-4 border-t border-border/50 flex items-start gap-2 p-3 rounded-lg bg-amber-50/50 dark:bg-amber-950/20">
-        <AlertTriangle className="h-4 w-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
-        <p className="text-xs text-amber-800 dark:text-amber-200">
-          {lang === "sl"
-            ? "To je izobraževalno orodje. Ocene so informativne narave in ne predstavljajo absolutne resnice. Spodbujamo kritično presojo."
-            : "This is an educational tool. Ratings are informational and do not represent absolute truth. We encourage critical thinking."}
-        </p>
+      <div className="mt-8 pt-6 border-t border-border/50 space-y-3 px-4 py-4 rounded-lg bg-gradient-to-r from-amber-50/50 to-orange-50/50 dark:from-amber-950/15 dark:to-orange-950/15 border border-amber-200/30 dark:border-amber-800/30">
+        <div className="flex items-start gap-3">
+          <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <p className="text-sm font-medium text-amber-900 dark:text-amber-100 mb-2">
+              {lang === "sl" ? "Izobraževalno orodje" : "Educational Tool"}
+            </p>
+            <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
+              {lang === "sl"
+                ? "To je izobraževalno orodje za analizo medijev. Ocene so informativne narave in ne predstavljajo absolutne resnice. Spodbujamo kritično presojo. Orodje lahko vsebuje napake — če naletite na napako ali imate predloge, nas kontaktirajte na "
+                : "This is an educational tool for analyzing media outlets. Ratings are informational and do not represent absolute truth. We encourage critical thinking. The tool may contain errors — if you find an error or have suggestions, contact us at "}
+              <a href="mailto:miha@gmail.com" className="font-semibold text-amber-700 dark:text-amber-300 hover:underline">
+                miha@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   )

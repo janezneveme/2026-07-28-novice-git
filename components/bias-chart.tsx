@@ -32,6 +32,43 @@ interface CustomTooltipProps {
   }
 }
 
+interface CustomDotProps {
+  cx?: number
+  cy?: number
+  fill?: string
+  r?: number
+  payload?: MediaOutlet
+}
+
+function CustomDot({ cx, cy, fill, r, payload }: CustomDotProps) {
+  return (
+    <g>
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill={fill}
+        opacity={0.85}
+        style={{
+          animation: "dotFadeIn 0.4s ease-in-out",
+        }}
+      />
+      <style>{`
+        @keyframes dotFadeIn {
+          0% {
+            r: 1px;
+            opacity: 0;
+          }
+          100% {
+            r: ${r}px;
+            opacity: 0.85;
+          }
+        }
+      `}</style>
+    </g>
+  )
+}
+
 function CustomTooltip({ active, payload, lang, t }: CustomTooltipProps) {
   if (active && payload && payload.length) {
     const data = payload[0].payload
@@ -180,16 +217,16 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
             <Scatter
               data={data}
               cursor="pointer"
-              isAnimationActive={false}
+              isAnimationActive={true}
+              animationDuration={400}
+              animationEasing="ease-in-out"
+              shape={<CustomDot r={8} />}
               onClick={(point) => onSelectMedia(point as unknown as MediaOutlet)}
             >
               {data.map((entry) => (
                 <Cell
                   key={`cell-${entry.id}`}
                   fill={getPointColor(entry.bias)}
-                  r={8}
-                  className="hover:opacity-100 transition-opacity duration-150"
-                  style={{ opacity: 0.85 }}
                 />
               ))}
             </Scatter>
@@ -221,14 +258,7 @@ export function BiasChart({ data, onSelectMedia, minReliability = 0 }: BiasChart
         </div>
       </div>
       
-      {/* Chart explanation */}
-      <div className="mt-3 p-3 rounded-lg border border-border/50 bg-muted/30">
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          {lang === "sl" 
-            ? "Navpična črtkana črta označuje politično sredino (nevtralno poročanje). Vodoravna črtkana črta pri 60% predstavlja prag zanesljivosti - mediji nad to črto veljajo za bolj zanesljive pri poročanju dejstev."
-            : "The vertical dashed line marks the political center (neutral reporting). The horizontal dashed line at 60% represents the reliability threshold - media above this line are considered more reliable in factual reporting."}
-        </p>
-      </div>
+
     </div>
   )
 }
